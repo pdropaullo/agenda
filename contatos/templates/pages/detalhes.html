@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'detalhes.css' %}">
+    <title>Detalhes</title>
+</head>
+
+<body>
+    <div class="card">
+        <div class="imagem">
+            <img class="profile" src="{{ contato.imagem.url }}" alt="">
+        </div>
+        <div class="infos">
+            <div class="nome">
+                <h3 id="oque">Nome:</h3>
+                <h3 id="info">{{contato.nome}}</h3>
+            </div>
+            <div class="cpf">
+                <h3 id="oque">CPF:</h3>
+                <h3 id="info">{{contato.cpf}}</h3>
+            </div>
+            <div class="email">
+                <h3 id="oque">Email:</h3>
+                <h3 id="info">{{contato.email}}</h3>
+            </div>
+            <div class="telefone">
+                <h3 id="oque">Telefone:</h3>
+                <h3 id="info">{{contato.telefone}}</h3>
+            </div>
+            <div class="altura">
+                <h3 id="oque">Altura:</h3>
+                <h3 id="info">{{contato.altura}}</h3>
+            </div>
+            <div class="descricao">
+                <h3 id="oque">Descrição:</h3>
+                <h3 id="info">{{contato.descricao}}</h3>
+            </div>
+            <div class="data_nasc">
+                <h3 id="oque">Data de Nascimento:</h3>
+                <h3 id="info">{{contato.data_nascimento}}</h3>
+            </div>
+            <div class="situacao">
+                <h3 id="oque">Ativo:</h3>
+                {% if contato.ativo == True %}
+                <h3 id="info"><i class="fa-solid fa-circle-check" id="check"></i></h3>
+                {% else %}
+                <h3 id="info"><i class="fa-solid fa-circle-xmark" id="over"></i></h3>
+                {% endif %}
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="{% url 'deletar' contato.id %}" id="apagar">APAGAR</a>
+            <a href="#" id="editar">EDITAR</a>
+        </div>
+    </div>
+</body>
+
+</html>

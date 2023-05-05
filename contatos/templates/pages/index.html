@@ -14,12 +14,16 @@
 </head>
 
 <body>
-    <h1>Agenda</h1>
+    <h1 class="titulo">Agenda</h1>
 
     <form action="{% url 'busca' %}">
         <input type="text" name="search" placeholder="Buscar contato...">
         <button type="submit">Buscar</button>
     </form>
+
+    <div class="add-btn">
+        <a href="{% url 'adicionar' %}">Adicionar Contato</a>
+    </div>
 
     <table>
         <thead>
@@ -35,7 +39,7 @@
             {% for contato in contatos %}
             <tr>
                 <td>{{contato.id}}</td>
-                <td>{{contato.nome}}</td>
+                <td><a href="{% url 'detalhes' contato.id %}">{{contato.nome}}</a></td>
                 <td>{{contato.email}}</td>
                 <td>{{contato.cpf}}</td>
                 {% if contato.ativo == True %}

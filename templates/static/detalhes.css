@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+    background-color: gainsboro;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px black;
+}
+
+.profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+}
+
+.infos {
+    width: 90%;
+}
+
+.nome,
+.cpf,
+.email,
+.telefone,
+.altura,
+.descricao,
+.data_nasc,
+.situacao {
+    display: flex;
+    justify-content: space-between;
+}
+
+#oque {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 2.5px;
+}
+
+#info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 2.5px;
+}
+
+#check {
+    color: green;
+}
+
+#over {
+    color: red;
+}
+
+.buttons {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons>a {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.buttons>a:hover {
+    color: black;
+}
+
+#apagar {
+    background-color: red;
+}
+
+#editar {
+    background-color: green;
+}

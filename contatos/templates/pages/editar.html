@@ -15,28 +15,31 @@
     <link rel="stylesheet" href="{% static 'adicionar.css' %}">
     <script defer src="{% static 'jquery.mask.js' %}"></script>
     <script defer src="{% static 'jquery.mask.min.js' %}"></script>
-    <title>Adicionar</title>
+    <title>Editar</title>
 </head>
 
 <body>
-    <h1>Adicionar Contato</h1>
+    <h1>Editar Contato</h1>
     <form method="POST" enctype="multipart/form-data" action=""> {% csrf_token %}
-        <input class="nome" name="nome" type="text" placeholder="Nome">
-        <input class="cpf" name="cpf" type="text" placeholder="CPF">
-        <input class="email" name="email" type="text" placeholder="Email">
-        <input class="telefone" name="telefone" type="text" placeholder="Telefone">
-        <input class="altura" name="altura" type="text" placeholder="Altura">
-        <input class="descricao" name="descricao" type="text" placeholder="Descrição">
-        <input class="data_nascimento" name="data_nascimento" type="date">
-        <input class="imagem" name="imagem" type="file">
-        <button type="submit">Adicionar</button>
+        <input class="nome" name="nome" value="{{contato.nome}}" type="text" placeholder="Nome">
+        <input class="cpf" name="cpf" value="{{contato.cpf}}" type="text" placeholder="CPF">
+        <input class="email" name="email" value="{{contato.email}}" type="text" placeholder="Email">
+        <input class="telefone" name="telefone" value="{{contato.telefone}}" type="text" placeholder="Telefone">
+        <input class="altura" name="altura" value="{{contato.altura}}" type="text" placeholder="Altura">
+        <input class="descricao" name="descricao" value="{{contato.descricao}}" type="text" placeholder="Descrição">
+        <input class="data_nascimento" name="data_nascimento" value="{{contato.data_nascimento | date:'Y-m-d' }}"
+            type="date">
+        <input class="ativo" name="ativo" type="checkbox" {% if contato.ativo==True %} checked {% endif %}>
+        <!-- #TO DO: verificar alteração de fotos -->
+        <input class="imagem" name="imagem" value="{{contato.imagem.url}}" type="file">
+        <button type="submit">Editar</button>
     </form>
 
     <script>
         $(document).ready(function () {
             $('.altura').mask('0.00')
             $('.cpf').mask('000.000.000-00')
-            $('.telefone').mask('00 00000-0000')
+            $('.telefone').mask('(00) 00000-0000')
         })
     </script>
 

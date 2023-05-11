@@ -16,7 +16,11 @@
 <body>
     <div class="card">
         <div class="imagem">
+            {% if contato.imagem %}
             <img class="profile" src="{{ contato.imagem.url }}" alt="">
+            {% else %}
+            <img src="https://cdn-icons-png.flaticon.com/512/1695/1695213.png" alt="">
+            {% endif %}
         </div>
         <div class="infos">
             <div class="nome">
@@ -58,7 +62,7 @@
         </div>
         <div class="buttons">
             <a href="{% url 'deletar' contato.id %}" id="apagar">APAGAR</a>
-            <a href="#" id="editar">EDITAR</a>
+            <a href="{% url 'editar' contato.id %}" id="editar">EDITAR</a>
         </div>
     </div>
 </body>

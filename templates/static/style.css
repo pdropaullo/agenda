@@ -7,6 +7,59 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.titulo {
+    text-align: center;
+    margin: 10px auto;
+}
+
+form {
+    width: 800px;
+    margin: 0 auto;
+}
+
+form>button{
+    width: 100px;
+    height: 2rem;
+}
+
+form>button:hover{
+    cursor: pointer;
+}
+
+form>input {
+    height: 2rem;
+    padding: 0 2px;
+}
+
+.funcoes {
+    width: 800px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add,
+.ativo,
+.inativo {
+    width: 100px;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.add{
+    background-color: cornflowerblue;
+}
+
+.ativo{
+    background-color: green;
+}
+
+.inativo{
+    background-color: red;
+}
+
 table {
     width: 800px;
     margin: 40px auto;
@@ -49,30 +102,10 @@ tbody>tr:last-of-type {
     border-radius: 10px;
 }
 
-.titulo {
-    text-align: center;
-    margin: 10px auto;
-}
-
 #check {
     color: green;
 }
 
 #over {
     color: red;
-}
-
-form {
-    width: 800px;
-    margin: 0 auto;
-}
-
-form>input {
-    height: 2rem;
-    padding: 0 2px;
-}
-
-.add-btn{
-    width: 800px;
-    margin: 40px auto;
 }

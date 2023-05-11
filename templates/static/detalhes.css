@@ -86,8 +86,21 @@
 
 #apagar {
     background-color: red;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #editar {
     background-color: green;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#apagar:hover,
+#editar:hover {
+    background-color: gray;
 }

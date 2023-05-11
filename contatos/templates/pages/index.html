@@ -21,8 +21,14 @@
         <button type="submit">Buscar</button>
     </form>
 
-    <div class="add-btn">
-        <a href="{% url 'adicionar' %}">Adicionar Contato</a>
+    <div class="funcoes">
+        <div class="adicionar">
+            <a class="add" href="{% url 'adicionar' %}">Adicionar Contato</a>
+        </div>
+        <div class="filtros">
+            <a class="ativo" href="">Ativos</a>
+            <a class="inativo" href="">Inativos</a>
+        </div>
     </div>
 
     <table>

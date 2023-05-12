@@ -29,11 +29,29 @@
         <input class="descricao" name="descricao" value="{{contato.descricao}}" type="text" placeholder="Descrição">
         <input class="data_nascimento" name="data_nascimento" value="{{contato.data_nascimento | date:'Y-m-d' }}"
             type="date">
-        <input class="ativo" name="ativo" type="checkbox" {% if contato.ativo==True %} checked {% endif %}>
-        <!-- #TO DO: verificar alteração de fotos -->
-        <input class="imagem" name="imagem" value="{{contato.imagem.url}}" type="file">
+        <div class="area_ativo">
+            <h4>Ativo:</h4>
+            <input class="ativo" name="ativo" type="checkbox" {% if contato.ativo == True %} checked {% endif %}>
+        </div>
+        {% if contato.imagem %}
+        <label for="img"><i class="fa-solid fa-upload"></i></label>
+        <input id="img" class="imagem" name="imagem" value="{{contato.imagem.url}}" type="file" accept="imagem/*">
+        {% else %}
+        <label for="img"><i class="fa-solid fa-upload"></i></label>
+        <input id="img" class="imagem" name="imagem" type="file" accept="imagem/*">
+        {% endif %}
         <button type="submit">Editar</button>
     </form>
+
+    <img class="img_input" src="" alt="">
+
+    <script>
+        let img = document.querySelector('#img')
+        let img_input = document.querySelector('.img_input')
+        img.addEventListener('change', function(){
+            img_input.src = window.URL.createObjectURL(this.files[0])
+        })
+    </script>
 
     <script>
         $(document).ready(function () {

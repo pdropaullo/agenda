@@ -90,6 +90,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .5s;
 }
 
 #editar {
@@ -98,9 +99,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .5s;
 }
 
 #apagar:hover,
 #editar:hover {
-    background-color: gray;
+    opacity: .8;
+    color: black;
 }

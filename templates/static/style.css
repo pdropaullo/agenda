@@ -12,25 +12,6 @@
     margin: 10px auto;
 }
 
-form {
-    width: 800px;
-    margin: 0 auto;
-}
-
-form>button{
-    width: 100px;
-    height: 2rem;
-}
-
-form>button:hover{
-    cursor: pointer;
-}
-
-form>input {
-    height: 2rem;
-    padding: 0 2px;
-}
-
 .funcoes {
     width: 800px;
     margin: 40px auto;
@@ -38,26 +19,88 @@ form>input {
     justify-content: space-between;
 }
 
-.add,
-.ativo,
-.inativo {
+form {
+    display: flex;
+}
+
+form>input {
+    height: 40px;
+    padding: 0 2px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+form>button {
     width: 100px;
+    height: 40px;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 5px;
     color: white;
     font-size: 18px;
-    border-radius: 5px;
-    padding: 5px;
+    transition: .5s;
 }
 
-.add{
+form>button:hover {
+    cursor: pointer;
+    opacity: .8;
+    color: black;
+}
+
+.adicionar {
+    display: flex;
+}
+
+.add {
     background-color: cornflowerblue;
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
 }
 
-.ativo{
+.filtros{
+    display: flex;
+    gap: 10px;
+}
+
+.ativo,
+.inativo {
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.ativo {
     background-color: green;
 }
 
-.inativo{
+.inativo {
     background-color: red;
+}
+
+.add:hover,
+.ativo:hover,
+.inativo:hover {
+    opacity: .8;
+    color: black;
 }
 
 table {
@@ -87,6 +130,16 @@ tbody>tr:last-of-type {
     border-bottom: 3px solid cornflowerblue;
 }
 
+tbody>tr{
+    transition: .5s;
+}
+
+tbody>tr:hover {
+    background-color: cornflowerblue;
+    opacity: .8;
+    cursor: pointer;
+}
+
 .pagination {
     display: flex;
     width: 800px;
@@ -100,6 +153,12 @@ tbody>tr:last-of-type {
     padding: 10px 15px;
     color: white;
     border-radius: 10px;
+    transition: .5s;
+}
+
+.pagination>a:hover {
+    opacity: .8;
+    color: black;
 }
 
 #check {
@@ -108,4 +167,25 @@ tbody>tr:last-of-type {
 
 #over {
     color: red;
+}
+
+.sair{
+    background-color: red;
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    transition: .5s;
+}
+
+.sair:hover{
+    opacity: .8;
+    color: black;
 }

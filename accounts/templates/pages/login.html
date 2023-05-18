@@ -26,6 +26,13 @@
         <button type="submit">Entrar</button>
     </form>
     <a class="cadastrar" href="{% url 'cadastrar' %}">Não possui cadastro? Clique aqui!</a>
+
+    {% if messages %}
+        {% for message in messages %}
+            <h3 class="mensagem" >{{ message }}</h3>
+        {% endfor %}
+    {% endif %}
+
 </body>
 
 </html>

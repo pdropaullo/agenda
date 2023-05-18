@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
-from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 def user_login(request):
@@ -11,6 +11,7 @@ def user_login(request):
         password = request.POST.get('password')
         check_user = auth.authenticate(username=username, password=password)
         if check_user == None:
+            messages.error(request, message='Usuário e/ou senha inválido(s)!')
             return redirect('login')
         else:
             auth.login(request, check_user)

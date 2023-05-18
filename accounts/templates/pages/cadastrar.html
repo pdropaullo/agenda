@@ -12,20 +12,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="{% static 'cadastrar.css' %}">
     <script defer src="{% static 'jquery.mask.js' %}"></script>
     <script defer src="{% static 'jquery.mask.min.js' %}"></script>
-    <title>Login</title>
+    <title>Cadastrar Login</title>
 </head>
 
 <body>
-    <h1>Login</h1>
+    <h1>Cadastrar Login</h1>
     <form method="POST"> {% csrf_token %}
         <input type="text" name="username" id="" placeholder="Login">
+        <input type="text" name="email" id="" placeholder="Email">
         <input type="password" name="password" id="" placeholder="Senha">
-        <button type="submit">Entrar</button>
+        <input type="password" name="re_password" id="" placeholder="Repita a Senha">
+        <button type="submit">Cadastrar</button>
     </form>
-    <a class="cadastrar" href="{% url 'cadastrar' %}">Não possui cadastro? Clique aqui!</a>
 </body>
 
 </html>

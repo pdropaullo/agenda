@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contatos
 from django.contrib.auth.decorators import login_required
+import openai
+
 
 @login_required(redirect_field_name='login')
 def index(request):
-    contatos = Contatos.objects.filter(usuario_id=request.user.id).order_by('-id')
+    contatos = Contatos.objects.filter(
+        usuario_id=request.user.id).order_by('-id')
     return render(request, 'pages/index.html', {'contatos': contatos})
 
 
@@ -27,6 +30,19 @@ def deletar(request, id):
     return redirect('home')
 
 
+def criar_descricao(nome):
+    API_KEY = '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'
+    openai.api_key = API_KEY
+    modelo = 'text-davinci-003'
+    pergunta = f'Gere uma profissão para uma pessoa de nome {nome}'
+    response = openai.Completion.create(
+        engine=modelo,
+        prompt=pergunta,
+        max_tokens=1024
+    )
+    return (response.choices[0]['text'])
+
+
 def adicionar(request):
     if request.method == 'POST':
         nome = request.POST.get('nome')
@@ -35,6 +51,8 @@ def adicionar(request):
         telefone = request.POST.get('telefone')
         altura = request.POST.get('altura')
         descricao = request.POST.get('descricao')
+        if descricao == '':
+            descricao = criar_descricao(nome)
         data_nascimento = request.POST.get('data_nascimento')
         imagem = request.FILES.get('imagem')
 

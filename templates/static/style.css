@@ -7,7 +7,8 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.titulo {
+.titulo,
+.user {
     text-align: center;
     margin: 10px auto;
 }

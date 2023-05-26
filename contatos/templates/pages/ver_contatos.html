@@ -10,25 +10,11 @@
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Agenda</title>
+    <title>Ver Contatos</title>
 </head>
 
 <body>
-    <h1 class="titulo">Agenda</h1>
-
-    <div class="funcoes">
-        <form action="{% url 'busca' %}">
-            <input type="text" name="search" placeholder="Buscar contato...">
-            <button type="submit">Buscar</button>
-        </form>
-        <div class="adicionar">
-            <a class="add" href="{% url 'adicionar' %}">+ Adicionar Contato</a>
-        </div>
-        <div class="filtros">
-            <a class="ativo" href="">Ativos</a>
-            <a class="inativo" href="">Inativos</a>
-        </div>
-    </div>
+    <h1 class="titulo">Ver Contatos</h1>
 
     <table>
         <thead>
@@ -63,11 +49,7 @@
         <a href="">4</a>
         <a href="">5</a>
     </div>
-    <p class="user">Usuário: {{user}}</p>
-    <a class="sair" href="{% url 'logout' %}">Sair</a>
-    {% if user.is_superuser %}
-    <a class="ver_user" href="{% url 'ver_usuarios' %}">Ver Usuários</a>
-    {% endif %}
+    
 </body>
 
 </html>

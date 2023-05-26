@@ -60,10 +60,12 @@
                 {% endif %}
             </div>
         </div>
+        {% if not user.is_superuser %}
         <div class="buttons">
             <a href="{% url 'deletar' contato.id %}" id="apagar">APAGAR</a>
             <a href="{% url 'editar' contato.id %}" id="editar">EDITAR</a>
         </div>
+        {% endif %}
     </div>
 </body>
 

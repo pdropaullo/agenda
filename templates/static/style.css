@@ -190,3 +190,24 @@ tbody>tr:hover {
     opacity: .8;
     color: black;
 }
+
+.ver_user{
+    background-color: cornflowerblue;
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    transition: .5s;
+}
+
+.ver_user:hover{
+    opacity: .8;
+    color: black;
+}

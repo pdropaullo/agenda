@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contatos
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 import openai
 
 
@@ -9,6 +10,18 @@ def index(request):
     contatos = Contatos.objects.filter(
         usuario_id=request.user.id).order_by('-id')
     return render(request, 'pages/index.html', {'contatos': contatos})
+
+
+@login_required(redirect_field_name='login')
+def ver_usuarios(request):
+    usuarios = User.objects.all()
+    return render(request, 'pages/ver_usuarios.html', {'usuarios': usuarios})
+
+
+@login_required(redirect_field_name='login')
+def ver_contatos(request, id):
+    contatos = Contatos.objects.filter(usuario_id=id).order_by('-id')
+    return render(request, 'pages/ver_contatos.html', {'contatos': contatos})
 
 
 def search(request):

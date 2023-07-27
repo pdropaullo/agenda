@@ -20,7 +20,7 @@ git clone https://github.com/pdropaullo/agenda.git
 ```
 2. Acesse o diretório do projeto:
 ```bash
-cd Party_Pass_Web
+cd agenda
 ```
 3. Crie e ative um ambiente virtual (recomendado):
 ```bash
